@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog - Naveen Venkatesan</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <script>
+            (function () {
+                const savedTheme = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+        </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg
+                            class="icon-moon"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                            />
+                        </svg>
+                        <svg
+                            class="icon-sun"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle cx="12" cy="12" r="5" />
+                            <line
+                                x1="12"
+                                y1="1"
+                                x2="12"
+                                y2="3"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="12"
+                                y1="21"
+                                x2="12"
+                                y2="23"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="4.22"
+                                y1="4.22"
+                                x2="5.64"
+                                y2="5.64"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="18.36"
+                                y1="18.36"
+                                x2="19.78"
+                                y2="19.78"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="1"
+                                y1="12"
+                                x2="3"
+                                y2="12"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="21"
+                                y1="12"
+                                x2="23"
+                                y2="12"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="4.22"
+                                y1="19.78"
+                                x2="5.64"
+                                y2="18.36"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="18.36"
+                                y1="5.64"
+                                x2="19.78"
+                                y2="4.22"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="nav-logo">Naveen Venkatesan</a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="photos.html">Travel Photos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <header class="page-header">
+                <h1>Blog</h1>
+            </header>
+
+            <div class="blog-list">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <h2>
+                        <a
+                            href="https://yourblog.com/post-1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Your First Blog Post Title</a
+                        >
+                    </h2>
+                    <p class="blog-meta">January 15, 2025</p>
+                    <p class="blog-excerpt">
+                        A brief description or excerpt of your blog post goes
+                        here. This gives readers a preview of what the post is
+                        about before they click through to read more.
+                    </p>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <h2>
+                        <a
+                            href="https://yourblog.com/post-2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Another Interesting Topic</a
+                        >
+                    </h2>
+                    <p class="blog-meta">January 10, 2025</p>
+                    <p class="blog-excerpt">
+                        Another excerpt describing what this blog post covers.
+                        Keep it concise but informative enough to capture the
+                        reader's interest.
+                    </p>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <h2>
+                        <a
+                            href="https://yourblog.com/post-3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Technical Deep Dive</a
+                        >
+                    </h2>
+                    <p class="blog-meta">January 5, 2025</p>
+                    <p class="blog-excerpt">
+                        A technical blog post about a specific topic. This could
+                        be a tutorial, explanation of a concept, or a
+                        walkthrough of a project you've worked on.
+                    </p>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <h2>
+                        <a
+                            href="https://yourblog.com/post-4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Thoughts on Industry Trends</a
+                        >
+                    </h2>
+                    <p class="blog-meta">December 28, 2024</p>
+                    <p class="blog-excerpt">
+                        Share your perspective on current trends in your field.
+                        This helps establish your expertise and gives readers
+                        insight into your thinking.
+                    </p>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card">
+                    <h2>
+                        <a
+                            href="https://yourblog.com/post-5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Project Showcase</a
+                        >
+                    </h2>
+                    <p class="blog-meta">December 20, 2024</p>
+                    <p class="blog-excerpt">
+                        Highlight a project you've completed, discussing the
+                        challenges you faced, the solutions you implemented, and
+                        what you learned along the way.
+                    </p>
+                </article>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Naveen Venkatesan</p>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

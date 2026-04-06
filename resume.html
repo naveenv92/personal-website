@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resume - Naveen Venkatesan</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <script>
+            (function () {
+                const savedTheme = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+        </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg
+                            class="icon-moon"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                            />
+                        </svg>
+                        <svg
+                            class="icon-sun"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle cx="12" cy="12" r="5" />
+                            <line
+                                x1="12"
+                                y1="1"
+                                x2="12"
+                                y2="3"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="12"
+                                y1="21"
+                                x2="12"
+                                y2="23"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="4.22"
+                                y1="4.22"
+                                x2="5.64"
+                                y2="5.64"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="18.36"
+                                y1="18.36"
+                                x2="19.78"
+                                y2="19.78"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="1"
+                                y1="12"
+                                x2="3"
+                                y2="12"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="21"
+                                y1="12"
+                                x2="23"
+                                y2="12"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="4.22"
+                                y1="19.78"
+                                x2="5.64"
+                                y2="18.36"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="18.36"
+                                y1="5.64"
+                                x2="19.78"
+                                y2="4.22"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="nav-logo">Naveen Venkatesan</a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                    <li><a href="photos.html">Travel Photos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <header class="page-header">
+                <h1>Resume</h1>
+            </header>
+
+            <div class="resume-download">
+                <a
+                    href="images/Naveen_MLE_Resume___2025.pdf"
+                    class="btn"
+                    download
+                >
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                    </svg>
+                    Download PDF
+                </a>
+            </div>
+
+            <!-- Experience Section -->
+            <section class="resume-section">
+                <h2>Experience</h2>
+
+                <div class="resume-item">
+                    <h3>Machine Learning Software Engineer</h3>
+                    <p class="subtitle">Rivian</p>
+                    <p class="date">August 2020 - Present</p>
+                    <ul>
+                        <li>Key responsibility or achievement</li>
+                        <li>Another important contribution</li>
+                        <li>Notable project or outcome</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Previous Job Title</h3>
+                    <p class="subtitle">Previous Company</p>
+                    <p class="date">June 2020 - December 2022</p>
+                    <ul>
+                        <li>Description of role and responsibilities</li>
+                        <li>Key achievements and contributions</li>
+                        <li>Technologies or skills utilized</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Earlier Position</h3>
+                    <p class="subtitle">Earlier Company</p>
+                    <p class="date">January 2018 - May 2020</p>
+                    <ul>
+                        <li>Role description and main duties</li>
+                        <li>Accomplishments during this period</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="resume-section">
+                <h2>Education</h2>
+
+                <div class="resume-item">
+                    <h3>PhD, Materials Science</h3>
+                    <p class="subtitle">
+                        University of California, Santa Barbara
+                    </p>
+                    <p class="date">2020</p>
+                    <ul>
+                        <li>Doctoral Advisor: Michael Chabinyc</li>
+                        <li>
+                            Thesis: Charge-Carrier Dynamics and Structural
+                            Characterization of Layered Hybrid Halide
+                            Perovskites
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>MS, Materials Science and Engineering</h3>
+                    <p class="subtitle">University of California, Berkeley</p>
+                    <p class="date">2015</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3>BS, Chemical Engineering and Materials Science</h3>
+                    <p class="subtitle">University of California, Berkeley</p>
+                    <p class="date">2014</p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="resume-section">
+                <h2>Skills</h2>
+
+                <div class="resume-item">
+                    <h3>Technical Skills</h3>
+                    <p>Skill 1, Skill 2, Skill 3, Skill 4, Skill 5</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Tools & Technologies</h3>
+                    <p>Tool 1, Tool 2, Tool 3, Tool 4, Tool 5</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Languages</h3>
+                    <p>English (Native), Other Language (Proficiency Level)</p>
+                </div>
+            </section>
+
+            <!-- Publications/Projects Section (Optional) -->
+            <section class="resume-section">
+                <h2>Publications & Projects</h2>
+
+                <div class="resume-item">
+                    <h3>Project or Publication Title</h3>
+                    <p class="date">Year</p>
+                    <p>
+                        Brief description of the project or publication and its
+                        impact.
+                    </p>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Another Notable Work</h3>
+                    <p class="date">Year</p>
+                    <p>Description of this work and why it's significant.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Naveen Venkatesan</p>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Travel Photos - Naveen Venkatesan</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <!-- Leaflet CSS -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+        <script>
+            (function () {
+                const savedTheme = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+        </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg
+                            class="icon-moon"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                            />
+                        </svg>
+                        <svg
+                            class="icon-sun"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle cx="12" cy="12" r="5" />
+                            <line
+                                x1="12"
+                                y1="1"
+                                x2="12"
+                                y2="3"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="12"
+                                y1="21"
+                                x2="12"
+                                y2="23"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="4.22"
+                                y1="4.22"
+                                x2="5.64"
+                                y2="5.64"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="18.36"
+                                y1="18.36"
+                                x2="19.78"
+                                y2="19.78"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="1"
+                                y1="12"
+                                x2="3"
+                                y2="12"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="21"
+                                y1="12"
+                                x2="23"
+                                y2="12"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="4.22"
+                                y1="19.78"
+                                x2="5.64"
+                                y2="18.36"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="18.36"
+                                y1="5.64"
+                                x2="19.78"
+                                y2="4.22"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="nav-logo">Naveen Venkatesan</a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li>
+                        <a href="photos.html" class="active">Travel Photos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <header class="page-header">
+                <h1>Travel Photos</h1>
+            </header>
+
+            <!-- World Map -->
+            <div id="travel-map" class="travel-map"></div>
+
+            <!-- Location Info (shown when a pin is clicked) -->
+            <div id="location-info" class="location-info">
+                <h2 id="location-title"></h2>
+                <p id="location-date" class="location-date"></p>
+                <p id="location-description"></p>
+            </div>
+
+            <!-- Placeholder when no location is selected -->
+            <div id="location-placeholder" class="location-placeholder">
+                Click on a pin on the map to see photos from that location
+            </div>
+
+            <!-- Photo Grid (populated dynamically) -->
+            <div id="photo-grid" class="photo-grid hidden"></div>
+        </main>
+
+        <!-- Lightbox -->
+        <div class="lightbox">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                &times;
+            </button>
+            <button
+                class="lightbox-nav lightbox-prev"
+                aria-label="Previous photo"
+            >
+                &#10094;
+            </button>
+            <button class="lightbox-nav lightbox-next" aria-label="Next photo">
+                &#10095;
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" />
+                <p class="lightbox-caption"></p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Naveen Venkatesan</p>
+        </footer>
+
+        <!-- Leaflet JS -->
+        <script
+            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+        ></script>
+        <script src="js/main.js"></script>
+        <script src="js/travel.js"></script>
+    </body>
+</html>
