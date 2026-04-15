@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Oxygen atom gradient (red sphere) -->
+    <radialGradient id="rO" cx="38%" cy="33%" r="65%">
+      <stop offset="0%" stop-color="#FF9A88"/>
+      <stop offset="100%" stop-color="#B03A2E"/>
+    </radialGradient>
+    <!-- Metal (B-site) atom gradient (teal sphere) -->
+    <radialGradient id="rM" cx="38%" cy="33%" r="65%">
+      <stop offset="0%" stop-color="#7CF7E0"/>
+      <stop offset="100%" stop-color="#0E8B6B"/>
+    </radialGradient>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-color="#00000066"/>
+    </filter>
+  </defs>
+
+  <!--
+    Perovskite MO6 octahedron – isometric-ish view (Y-rot 30°, X-rot 20°)
+    Vertices  (scale=32, center=(50,50)):
+      A top    = (50, 18)
+      B bottom = (50, 82)
+      C left   = (20, 54)
+      D right  = (80, 46)
+      E front  = (33, 61)
+      F back   = (67, 39)
+      M center = (50, 50)
+
+    Visible faces  : A-C-E, A-E-D, A-D-F, B-C-E, B-E-D
+    Hidden faces   : A-F-C, B-D-F, B-F-C
+    Hidden edges   : C-F, B-F
+  -->
+
+  <g filter="url(#shadow)">
+
+    <!-- ── HIDDEN FACES (darkest, drawn first) ─────────────────────── -->
+    <polygon points="50,18 67,39 20,54" fill="#0B3D50"/>
+    <polygon points="50,82 80,46 67,39" fill="#092E3E"/>
+    <polygon points="50,82 67,39 20,54" fill="#071E2A"/>
+
+    <!-- ── HIDDEN EDGES (dashed, chemistry convention) ─────────────── -->
+    <line x1="20" y1="54" x2="67" y2="39" stroke="#2A7A90" stroke-width="1.4"
+          stroke-dasharray="4,3" stroke-linecap="round"/>
+    <line x1="50" y1="82" x2="67" y2="39" stroke="#2A7A90" stroke-width="1.4"
+          stroke-dasharray="4,3" stroke-linecap="round"/>
+
+    <!-- ── VISIBLE FACES (back → front, lighter = more lit) ────────── -->
+    <!-- B-C-E  bottom-left-front  (darkest visible) -->
+    <polygon points="50,82 20,54 33,61" fill="#1A7290"/>
+    <!-- B-E-D  bottom-right-front -->
+    <polygon points="50,82 33,61 80,46" fill="#2A94B0"/>
+    <!-- A-C-E  top-left-front -->
+    <polygon points="50,18 20,54 33,61" fill="#44B2CC"/>
+    <!-- A-E-D  top-front-right -->
+    <polygon points="50,18 33,61 80,46" fill="#72CDE3"/>
+    <!-- A-D-F  top-right-back  (brightest, most lit) -->
+    <polygon points="50,18 80,46 67,39" fill="#A6E4F5"/>
+
+    <!-- ── VISIBLE EDGES ───────────────────────────────────────────── -->
+    <g stroke="#053A4A" stroke-width="1.5" stroke-linecap="round">
+      <!-- From A (top) -->
+      <line x1="50" y1="18" x2="20" y2="54"/>  <!-- A-C -->
+      <line x1="50" y1="18" x2="33" y2="61"/>  <!-- A-E -->
+      <line x1="50" y1="18" x2="80" y2="46"/>  <!-- A-D -->
+      <line x1="50" y1="18" x2="67" y2="39"/>  <!-- A-F -->
+      <!-- Equatorial ring (front half) -->
+      <line x1="20" y1="54" x2="33" y2="61"/>  <!-- C-E -->
+      <line x1="33" y1="61" x2="80" y2="46"/>  <!-- E-D -->
+      <line x1="80" y1="46" x2="67" y2="39"/>  <!-- D-F -->
+      <!-- From B (bottom) -->
+      <line x1="50" y1="82" x2="20" y2="54"/>  <!-- B-C -->
+      <line x1="50" y1="82" x2="33" y2="61"/>  <!-- B-E -->
+      <line x1="50" y1="82" x2="80" y2="46"/>  <!-- B-D -->
+    </g>
+
+    <!-- ── OXYGEN ATOMS (back to front for depth) ─────────────────── -->
+    <!-- F back   --> <circle cx="67" cy="39" r="5.5" fill="url(#rO)" stroke="#7B241C" stroke-width="0.7"/>
+    <!-- C left   --> <circle cx="20" cy="54" r="5.5" fill="url(#rO)" stroke="#7B241C" stroke-width="0.7"/>
+    <!-- D right  --> <circle cx="80" cy="46" r="5.5" fill="url(#rO)" stroke="#7B241C" stroke-width="0.7"/>
+    <!-- A top    --> <circle cx="50" cy="18" r="5.5" fill="url(#rO)" stroke="#7B241C" stroke-width="0.7"/>
+    <!-- B bottom --> <circle cx="50" cy="82" r="5.5" fill="url(#rO)" stroke="#7B241C" stroke-width="0.7"/>
+
+    <!-- ── CENTRAL METAL ATOM (B-site, teal) ──────────────────────── -->
+    <circle cx="50" cy="50" r="7.5" fill="url(#rM)" stroke="#0A6B52" stroke-width="0.8"/>
+
+    <!-- ── FRONT OXYGEN ATOM (on top of metal) ────────────────────── -->
+    <!-- E front  --> <circle cx="33" cy="61" r="5.5" fill="url(#rO)" stroke="#7B241C" stroke-width="0.7"/>
+
+  </g>
+</svg>
