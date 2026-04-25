@@ -8,6 +8,22 @@
   }
 })();
 
+// Insert pill background + wrap text in each nav link
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+    const text = link.textContent.trim();
+    link.textContent = '';
+
+    const pill = document.createElement('span');
+    pill.className = 'nav-pill-bg';
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'nav-link-text';
+    textSpan.textContent = text;
+
+    link.appendChild(pill);
+    link.appendChild(textSpan);
+});
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.querySelector('.nav-toggle');
@@ -26,6 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Save active nav link so the next page can slide the pill from here
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      const active = document.querySelector('.nav-links a.active');
+      if (active) sessionStorage.setItem('lastNavHref', active.getAttribute('href'));
+    });
+  });
+
   // Theme Toggle
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
@@ -42,6 +66,53 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+});
+
+// Page transition fallback for browsers without View Transitions API.
+// Self-disables when @view-transition { navigation: auto } is active.
+(function () {
+    if (document.startViewTransition !== undefined) return;
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.nav-links a').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                const href = link.getAttribute('href');
+                if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) return;
+                e.preventDefault();
+                document.body.classList.add('page-exit');
+                setTimeout(function () { window.location.href = href; }, 150);
+            });
+        });
+    });
+})();
+
+// Slide active pill from old position to new position across page transitions.
+// We set style.transform immediately to hold the pill at the old position while
+// the view transition overlay hides the nav, then slide it once the transition
+// finishes — avoiding the timing race from a hardcoded delay.
+window.addEventListener('pagereveal', function(e) {
+  var prevHref = sessionStorage.getItem('lastNavHref');
+  sessionStorage.removeItem('lastNavHref');
+  if (!prevHref || !e.viewTransition) return;
+
+  var activeLink = document.querySelector('.nav-links a.active');
+  var prevLink = document.querySelector('.nav-links a[href="' + prevHref + '"]');
+  if (!activeLink || !prevLink || activeLink === prevLink) return;
+
+  var pillBg = activeLink.querySelector('.nav-pill-bg');
+  if (!pillBg) return;
+
+  var dx = prevLink.getBoundingClientRect().left - activeLink.getBoundingClientRect().left;
+  if (!dx) return;
+
+  pillBg.style.transform = 'translateX(' + dx + 'px)';
+
+  e.viewTransition.finished.then(function() {
+    pillBg.style.transform = '';
+    pillBg.animate(
+      [{ transform: 'translateX(' + dx + 'px)' }, { transform: 'none' }],
+      { duration: 250, easing: 'ease-in-out' }
+    );
+  });
 });
 
 // Lightbox Functionality
