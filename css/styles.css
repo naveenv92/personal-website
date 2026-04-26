@@ -268,17 +268,26 @@ img {
     display: none;
 }
 
-
 /* Fallback for browsers without View Transitions support */
 @supports not (view-transition-name: none) {
     @keyframes navFadeIn {
-        from { opacity: 0; transform: translateY(-6px); }
-        to   { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     @keyframes pageFadeOut {
-        from { opacity: 1; }
-        to   { opacity: 0; }
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
     }
 
     .nav-container {
@@ -393,7 +402,7 @@ main {
 
 .about-photo {
     width: 100%;
-    border-radius: var(--radius);
+    border-radius: 100%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
