@@ -514,10 +514,20 @@ main {
     font-weight: 500;
 }
 
+.resume-item .journal {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
 .resume-item .date {
     font-size: 0.95rem;
     color: var(--color-text-muted);
     margin-bottom: 0.5rem;
+}
+
+.resume-item .authors {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
 }
 
 .resume-item ul {
