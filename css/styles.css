@@ -1,7 +1,103 @@
 /* ===== CSS Custom Properties ===== */
 
-/* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+/* Victor Mono Font */
+/* 100 - Thin */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-Thin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-ThinOblique.woff2") format("woff2");
+    font-weight: 100;
+    font-style: italic; /* Mapping Oblique file to Italic style */
+}
+
+/* 200 - Extra Light */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-ExtraLight.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-ExtraLightOblique.woff2") format("woff2");
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* 300 - Light */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-LightOblique.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* 400 - Regular */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-Oblique.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* 500 - Medium */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-MediumOblique.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* 600 - SemiBold */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-SemiBoldOblique.woff2") format("woff2");
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* 700 - Bold */
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Victor Mono";
+    src: url("fonts/VictorMono-BoldOblique.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+}
 
 :root {
     --color-bg: #fafafa;
@@ -46,7 +142,7 @@ body {
     font-family: var(--font-main);
     background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -103,7 +199,7 @@ img {
     border: 1px solid var(--color-border);
     border-radius: 50px;
     padding: 0.35rem 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-primary);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -161,7 +257,7 @@ img {
     padding: 0.4rem 0.85rem;
     border-radius: 50px;
     position: relative;
-    font-size: 0.875rem;
+    font-size: 0.975rem;
     transition: all var(--transition);
 }
 
@@ -359,14 +455,14 @@ main {
 }
 
 .hero-name {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
 
 .hero-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--color-text-muted);
     margin-bottom: 1.5rem;
 }
@@ -416,7 +512,7 @@ main {
 }
 
 .page-header h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     color: var(--color-primary);
 }
 
@@ -440,7 +536,7 @@ main {
 }
 
 .about-text p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     color: var(--color-text-muted);
 }
@@ -466,7 +562,7 @@ main {
 }
 
 .blog-card h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
@@ -479,13 +575,13 @@ main {
 }
 
 .blog-meta {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     color: var(--color-text-muted);
     margin-bottom: 0.75rem;
 }
 
 .blog-excerpt {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
 }
 
@@ -495,7 +591,7 @@ main {
     align-items: center;
     gap: 0.5rem;
     padding: 0.4rem 0.85rem;
-    font-size: 0.875rem;
+    font-size: 0.975rem;
     background-color: var(--color-accent);
     color: white;
     border-radius: var(--radius);
@@ -520,7 +616,7 @@ main {
 }
 
 .resume-section h2 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -532,34 +628,35 @@ main {
 }
 
 .resume-item h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-text);
 }
 
 .resume-item .subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--color-accent);
     font-weight: 500;
 }
 
 .resume-item .journal {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-style: italic;
     color: var(--color-text-muted);
 }
 
 .resume-item .date {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--color-text-muted);
     margin-bottom: 0.5rem;
 }
 
 .resume-item .authors {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--color-text-muted);
 }
 
 .resume-item ul {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-left: 1.25rem;
     color: var(--color-text-muted);
 }
@@ -611,7 +708,7 @@ main {
 
 .location-info .location-date {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -725,7 +822,7 @@ main {
 .lightbox-caption {
     color: white;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .lightbox-close {
@@ -735,7 +832,7 @@ main {
     background: none;
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: 2.1rem;
     cursor: pointer;
     width: 44px;
     height: 44px;
@@ -756,7 +853,7 @@ main {
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: 2.1rem;
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -785,7 +882,7 @@ main {
     padding: 1.5rem var(--spacing);
     border-top: 1px solid var(--color-border);
     color: var(--color-text-muted);
-    font-size: 0.875rem;
+    font-size: 0.975rem;
 }
 
 /* ===== Responsive ===== */
@@ -820,7 +917,7 @@ main {
 
     .nav-links a {
         padding: 0.35rem 0.6rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .theme-toggle {
@@ -829,7 +926,7 @@ main {
     }
 
     .hero-name {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
 
     .hero-photo {
@@ -853,7 +950,7 @@ main {
     .lightbox-nav {
         width: 40px;
         height: 40px;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .travel-map {
