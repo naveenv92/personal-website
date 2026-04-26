@@ -7,7 +7,7 @@
     --color-primary: #2c3e50;
     --color-accent: #3498db;
     --color-border: #e0e0e0;
-    --font-main: "Raleway", sans-serif;
+    --font-main: "Victor Mono", sans-serif;
     --max-width: 1000px;
     --spacing: 2rem;
     --radius: 8px;
@@ -96,7 +96,7 @@ img {
     border: 1px solid var(--color-border);
     border-radius: 50px;
     padding: 0.35rem 1rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-primary);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -331,14 +331,14 @@ main {
 }
 
 .hero-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
 
 .hero-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
     margin-bottom: 1.5rem;
 }
@@ -412,6 +412,7 @@ main {
 }
 
 .about-text p {
+    font-size: 0.9rem;
     margin-bottom: 1rem;
     color: var(--color-text-muted);
 }
@@ -437,7 +438,7 @@ main {
 }
 
 .blog-card h2 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -450,12 +451,13 @@ main {
 }
 
 .blog-meta {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--color-text-muted);
     margin-bottom: 0.75rem;
 }
 
 .blog-excerpt {
+    font-size: 0.9rem;
     color: var(--color-text-muted);
 }
 
@@ -490,7 +492,7 @@ main {
 }
 
 .resume-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -507,17 +509,19 @@ main {
 }
 
 .resume-item .subtitle {
+    font-size: 1rem;
     color: var(--color-accent);
     font-weight: 500;
 }
 
 .resume-item .date {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--color-text-muted);
     margin-bottom: 0.5rem;
 }
 
 .resume-item ul {
+    font-size: 0.9rem;
     margin-left: 1.25rem;
     color: var(--color-text-muted);
 }
